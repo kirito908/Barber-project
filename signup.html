@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+<body>
+
+    <form id="signupForm" onsubmit="validateForm(event)">
+        <h2>Sign Up</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="contact">Contact :</label>
+        <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Sign Up</button>
+
+        <div id="result"></div>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get form values
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var contact = document.getElementById('contact').value;
+            var password = document.getElementById('password').value;
+
+            // Simple validation
+            if (username.trim() === '' || email.trim() === '' || password.trim() === '') {
+                document.getElementById('result').innerText = 'All fields are required.';
+            } else {
+                document.getElementById('result').innerText = 'Signup successful!';
+                // You can send the form data to the server or perform further actions here
+            }
+        }
+    </script>
+
+</body>
+</html>
