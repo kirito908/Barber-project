@@ -29,20 +29,19 @@
 
     <script>
         function validateForm(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Get form values
+            event.preventDefault(); 
+           
             var username = document.getElementById('username').value;
             var email = document.getElementById('email').value;
             var contact = document.getElementById('contact').value;
             var password = document.getElementById('password').value;
 
-            // Simple validation
+           
             if (username.trim() === '' || email.trim() === '' || password.trim() === '') {
                 document.getElementById('result').innerText = 'All fields are required.';
             } else {
                 document.getElementById('result').innerText = 'Signup successful!';
-                // You can send the form data to the server or perform further actions here
+               
             }
         }
     </script>
